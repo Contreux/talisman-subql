@@ -1,0 +1,33 @@
+{
+  "name": "talisman-subql",
+  "version": "1.0.1",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc -b",
+    "test": "jest",
+    "prepack": "rm -rf dist && npm build",
+    "codegen": "./node_modules/.bin/subql codegen",
+    "patch:types": "node scripts/patch-types.js",
+    "start": "./node_modules/.bin/subql-node -f . --local --timeout=512 --batch-size=100 --port=3123",
+    "start:docker": "docker-compose pull && docker-compose up --remove-orphans"
+  },
+  "files": [
+    "dist",
+    "schema.graphql",
+    "project.yaml"
+  ],
+  "author": "qwer951123",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@polkadot/api": "^6.5.3",
+    "@subql/cli": "^0.13.0",
+    "@subql/node": "^0.22.0",
+    "@subql/types": "^0.8.5",
+    "typescript": "^4.1.3",
+    "yaml": "^1.10.0"
+  },
+  "dependencies": {
+    "dayjs": "^1.10.6"
+  }
+}
