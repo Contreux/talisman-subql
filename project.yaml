@@ -1,6 +1,6 @@
 specVersion: 0.0.1
-description: ""
-repository: ""
+description: "Talisman subql"
+repository: "https://github.com/willMorph/talisman-subql.git"
 schema: ./schema.graphql
 network:
   endpoint: 'wss://polkadot.api.onfinality.io/public-ws'

@@ -17,8 +17,8 @@
     "schema.graphql",
     "project.yaml"
   ],
-  "author": "qwer951123",
-  "license": "Apache-2.0",
+  "author": "JamBay",
+  "license": "MIT",
   "devDependencies": {
     "@polkadot/api": "^6.5.3",
     "@subql/cli": "^0.13.0",
