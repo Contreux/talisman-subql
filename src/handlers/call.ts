@@ -8,7 +8,7 @@ import { Dispatcher, getBatchInterruptedIndex, getKVData } from './utils';
 const dispatcher = new Dispatcher<DispatchedCallData>()
 
 
-async function traverExtrinsic(extrinsic: Extrinsic, raw: SubstrateExtrinsic): Promise<Call[]> {
+async function traverseExtrinsic(extrinsic: Extrinsic, raw: SubstrateExtrinsic): Promise<Call[]> {
   const list = []
   const batchInterruptedIndex = getBatchInterruptedIndex(raw)
 
@@ -62,7 +62,7 @@ async function traverExtrinsic(extrinsic: Extrinsic, raw: SubstrateExtrinsic): P
 
 export async function createCalls (extrinsic: Extrinsic, raw: SubstrateExtrinsic) {
 
-    const calls = await traverExtrinsic(extrinsic, raw)
+    const calls = await traverseExtrinsic(extrinsic, raw)
 
     await Promise.all(calls.map(async (item) => item.save()));
 }
