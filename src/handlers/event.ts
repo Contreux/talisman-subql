@@ -3,7 +3,7 @@ import { Dispatcher } from "./utils/dispatcher";
 import { ensureBlock } from "./block";
 import { Event } from "../types/models";
 import { getKVData } from "./utils";
-import { ensuerExtrinsic } from "./extrinsic";
+import { ensureExtrinsic } from "./extrinsic";
 import { DispatchedEventData } from "./types";
 
 // import { updateCrossedKSM } from './summary'
@@ -34,7 +34,7 @@ export async function ensureEvnet(event: SubstrateEvent) {
 
 export async function createEvent(event: SubstrateEvent) {
   const extrinsic = await (event.extrinsic
-    ? ensuerExtrinsic(event.extrinsic)
+    ? ensureExtrinsic(event.extrinsic)
     : undefined);
 
   const data = await ensureEvnet(event);

@@ -1,3 +1,4 @@
+// Handlers for blocks events and calls
 import { SubstrateBlock, SubstrateExtrinsic, SubstrateEvent } from '@subql/types'
 import { createEvent, createExtrinsic, createBlock } from '../handlers';
 

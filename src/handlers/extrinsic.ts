@@ -5,7 +5,7 @@ import { ensureAccount } from './account'
 import { ensureBlock } from './block'
 import { createCalls } from './call'
 
-export async function ensuerExtrinsic (extrinsic: SubstrateExtrinsic) {
+export async function ensureExtrinsic (extrinsic: SubstrateExtrinsic) {
   const recordId = extrinsic.extrinsic.hash.toString()
 
   let data = await Extrinsic.get(recordId)
@@ -22,7 +22,7 @@ export async function ensuerExtrinsic (extrinsic: SubstrateExtrinsic) {
 export async function createExtrinsic (extrinsic: SubstrateExtrinsic) {
   const signerAccount = extrinsic.extrinsic.signer.toString()
 
-  const data = await ensuerExtrinsic(extrinsic)
+  const data = await ensureExtrinsic(extrinsic)
   const block = await ensureBlock(extrinsic.block)
   const signer = await ensureAccount(signerAccount)
 
